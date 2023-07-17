@@ -1,7 +1,29 @@
 <div id="<%= dom_id post %>">
+  <%= toggle_trigger_tag renders: current_partial_path, morphs: dom_id(post),
+  controls: dom_id(post, :form), locals: local_assigns, assigns: { post: @post } do %>
+    <% if toggle_target_collapsed? dom_id(post, :form) %>
+      <%= link_to "Edit Post Inline", request.path %>
+    <% else %>
+      <%= link_to "Cancel Editing Post", request.path %>
+    <% end %>
+  <% end %>
+
+  <%= toggle_target_tag dom_id(post, :form) do %>
+    <%= render "posts/form", post: post %>
+  <% end %>
+
+  <hr>
+  
   <p>
     <strong>Title:</strong>
-    <%= post.title %>
+    <%= toggle_target_tag dom_id(post, :title), expanded: true do %>
+      <%= post.title %>
+    <% end %>
+    <%#= toggle_trigger_tag renders: current_partial_path, morphs: dom_id(post),
+     controls: dom_id(post, :title), method: :hide,
+     locals: local_assigns, assigns: { post: post } do %>
+      <%#= link_to "Edit Inline", request.path %>
+    <%# end %>
   </p>
 
   <p>
@@ -9,4 +31,21 @@
     <%= post.body %>
   </p>
 
+  <%= toggle_trigger_tag renders: current_partial_path,
+   morphs: dom_id(post),
+   controls: post.sections.map { dom_id(_1, :body) },
+   locals: local_assigns, assigns: { post: @post } do %>
+    <% if toggle_target_collapsed?(post.sections.map { dom_id(_1, :body) }) %>
+      <%= link_to "Expand all", request.path %>
+    <% else %>
+      <%= link_to "Collapse all", request.path %>
+    <% end %>
+  <% end %>
+
+  <% post.sections.each_with_index do |section, index| %>
+    <h2>Section <%= index + 1 %></h2>
+    <%= toggle_target_tag dom_id(section, :body) do %>
+      <p><%= section.body %></p>
+    <% end %>
+  <% end %>
 </div>

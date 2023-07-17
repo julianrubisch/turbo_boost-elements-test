@@ -2,6 +2,11 @@
 # yarn lockfile v1
 
 
+"@alpinejs/morph@>=3.10.4":
+  version "3.12.0"
+  resolved "https://registry.yarnpkg.com/@alpinejs/morph/-/morph-3.12.0.tgz#29423e564a14012d5bafc3aeefb4a9f218e6a676"
+  integrity sha512-Hw88rfoDdOgOmXrBYad+XGa43nr12gpxfAMzeSM+waW0ngHewldJ0/SShA0jvIUv9nCSmmfPK4HVzPeTgzAPtg==
+
 "@esbuild/android-arm64@0.17.16":
   version "0.17.16"
   resolved "https://registry.yarnpkg.com/@esbuild/android-arm64/-/android-arm64-0.17.16.tgz#7b18cab5f4d93e878306196eed26b6d960c12576"
@@ -134,6 +139,47 @@
   version "7.0.4"
   resolved "https://registry.yarnpkg.com/@rails/actioncable/-/actioncable-7.0.4.tgz#70a3ca56809f7aaabb80af2f9c01ae51e1a8ed41"
   integrity sha512-tz4oM+Zn9CYsvtyicsa/AwzKZKL+ITHWkhiu7x+xF77clh2b4Rm+s6xnOgY/sGDWoFWZmtKsE95hxBPkgQQNnQ==
+
+"@turbo-boost/commands@>= 0.0.11":
+  version "0.0.11"
+  resolved "https://registry.yarnpkg.com/@turbo-boost/commands/-/commands-0.0.11.tgz#6a2409aec3bd74b36664d680413c0c5e817b4127"
+  integrity sha512-S0ocq6mgXr0Vq53S6zsl3Jl2Em6mgnoE5jzegrBbow98IzvItWOqUgs3Dn2uE+uGa7/3h1fv84bFJHUzunc0sQ==
+  dependencies:
+    "@turbo-boost/streams" ">= 0.0.8"
+
+"@turbo-boost/elements@^0.0.14":
+  version "0.0.14"
+  resolved "https://registry.yarnpkg.com/@turbo-boost/elements/-/elements-0.0.14.tgz#0f7e0d3542c87c24dd59e3d84845f3a88b1da601"
+  integrity sha512-0nhjxX+FD1a1C99zFPPVvV3ZnTgUOWIsPxGK2H/7+FQzIGdrW39rx3+VY9qRVlu2cb8uqKrVhHPQw3SmasqRRA==
+  dependencies:
+    "@turbo-boost/commands" ">= 0.0.11"
+
+"@turbo-boost/streams@>= 0.0.8":
+  version "0.0.8"
+  resolved "https://registry.yarnpkg.com/@turbo-boost/streams/-/streams-0.0.8.tgz#21c61b0d58aa1e79b45842332b6b721bdee2cc75"
+  integrity sha512-6DyH6ce4Dt0arUTH0ckAFEUVv2a9UbtRed04G/61BmthUksHsNgGfzskICmaG0ZR2BERFCoFufc+5obm70GXtA==
+  dependencies:
+    "@alpinejs/morph" ">=3.10.4"
+    alpinejs ">=3.10.4"
+
+"@vue/reactivity@~3.1.1":
+  version "3.1.5"
+  resolved "https://registry.yarnpkg.com/@vue/reactivity/-/reactivity-3.1.5.tgz#dbec4d9557f7c8f25c2635db1e23a78a729eb991"
+  integrity sha512-1tdfLmNjWG6t/CsPldh+foumYFo3cpyCHgBYQ34ylaMsJ+SNHQ1kApMIa8jN+i593zQuaw3AdWH0nJTARzCFhg==
+  dependencies:
+    "@vue/shared" "3.1.5"
+
+"@vue/shared@3.1.5":
+  version "3.1.5"
+  resolved "https://registry.yarnpkg.com/@vue/shared/-/shared-3.1.5.tgz#74ee3aad995d0a3996a6bb9533d4d280514ede03"
+  integrity sha512-oJ4F3TnvpXaQwZJNF3ZK+kLPHKarDmJjJ6jyzVNDKH9md1dptjC7lWR//jrGuLdek/U6iltWxqAnYOu8gCiOvA==
+
+alpinejs@>=3.10.4:
+  version "3.12.0"
+  resolved "https://registry.yarnpkg.com/alpinejs/-/alpinejs-3.12.0.tgz#ff84d788231e7cc3fc38e363b7ebbc4f9d7031b2"
+  integrity sha512-YENcRBA9dlwR8PsZNFMTHbmdlTNwd1BkCeivPvOzzCKHas6AfwNRsDK9UEFmE5dXTMEZjnnpCTxV8vkdpWiOCw==
+  dependencies:
+    "@vue/reactivity" "~3.1.1"
 
 esbuild@^0.17.16:
   version "0.17.16"
